@@ -1,0 +1,609 @@
+html {
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    font-family: "Comforta", sans-serif;
+    cursor: url(./media/cursor.png), auto;
+}
+  
+body {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url(./image/basic/background/bg.png);
+    background-size: cover;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+
+h1 {
+    font-size: 2.5vh;
+    font-weight: lighter;
+}
+
+h1 span {
+    font-weight: 600;
+}
+
+.Ypanel-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 95vh;
+    width: 90vw;
+    margin: 2.5vh 5vw;
+}
+
+.Ypanel-area .Ypanel {
+    position: relative;
+    overflow-y: scroll;
+    min-width: 120px;
+    width: 10%;
+    height: 100%;
+    margin-left: 92%;
+    background-color: white;
+    border: 1px solid #F7EBF9;
+    border-radius: 30px;
+    z-index: 10;
+}
+
+.Ypanel-area .Ypanel::-webkit-scrollbar{
+    display: none;
+}
+
+.Ypanel-area .Ypanel .block-area {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    padding-top: 15px;
+    margin: auto;
+}
+
+.Ypanel-area .Ypanel .block-area .block {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 15%;
+    margin: 1rem 0;
+    border-radius: 35px;
+}
+
+.Ypanel-area .Ypanel .block-area .block:hover {
+    transform: scale(1.1);
+    cursor: url(./media/cursor-grab.png), auto;
+}
+
+.Ypanel-area .Ypanel .block-area .block img {
+    position: relative;
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding-top: 20%;
+}
+
+.Ypanel-area .Ypanel .block-area .fourth img {
+    width: 65%;
+    padding-top: 30%;
+}
+
+.Ypanel-area .Ypanel .block-area .fifth img {
+    width: 52%;
+    padding-top: 17%;
+}
+
+#main {
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 5% 70% 25%;
+}
+
+#header  {
+    margin: 0;
+    height: 100%;
+    margin-top: 3vh;
+    z-index: 10;
+}
+
+#header .header-area {
+    position: relative;
+    margin-left: 3vw;
+    width: 27%;
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: 80% auto auto;
+    grid-column-gap: 7px;
+}
+
+#header .header-area .title {
+    content:"";
+    background-color: #F9EB0F;
+    width: 100%;
+    height: 85%;
+    border-radius: 50px;
+    margin: auto;
+    color: #3C3C3C;
+    text-align: center;
+}
+#header .header-area .title h1{
+    margin-top: 0.7rem;
+}
+
+#header .header-area .text-ab {
+    background-color: #3C3C3C;
+    width: 100%;
+    height: 85%;
+    border-radius: 50%;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+
+#header .header-area .text-ab:hover {
+    transform: scale(1.1);
+    cursor: url(./media/curson.png), auto;
+}
+
+#header .header-area .text-ab h1{
+    margin-top: 20%;
+    font-weight: 700;
+    padding: 0.2rem 1rem;
+}
+
+#header .header-area .junior {
+    background-color: #3968CB;
+}
+
+#header .header-area .mini {
+    background-color: #FF68A8;
+}
+
+
+#tjbot  {
+    margin: 0;
+    height: 100%;
+}
+
+#tjbot .tjbot-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#tjbot .tjbot-area .tjbot {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    margin: auto;
+    margin-top: 5rem;
+    border-radius: 35px;
+    min-width: 400px;
+}
+
+#tjbot .tjbot-area .tjbot .complete-tj {
+    position: relative;
+    display: grid;
+    top: 3vh;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 80% 20%;
+}
+
+#tjbot .tjbot-area .tjbot .complete-tj .tjbot-pic {
+    position: relative;
+    width: auto;
+    height: 70%;
+    margin-left: 25%;
+    z-index: 1;
+}
+
+#tjbot .tjbot-area .tjbot .complete-tj .tjbot-hand {
+    position: relative;
+    width: auto;
+    height: 25%;
+    margin-top: 145%;
+    margin-left: -2.5vw;
+}
+
+#Xpanel {
+    margin: 0;
+    height: 100%;
+    background-color: #FFF;
+}
+
+#Xpanel .Xpanel  {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin-left: 3vw;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+#Xpanel .Xpanel::-webkit-scrollbar{
+    display: none;
+}
+
+#Xpanel .Xpanel .block-area {
+    position: relative;
+    width: 110%;
+    height: 80%;
+    margin-top: 2.5%;
+}
+
+#Xpanel .Xpanel .block-area .block {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 12%;
+    margin: auto;
+    margin-left: 3vw;
+    border: 3px dashed #E3E3E3;
+    border-radius: 35px;
+    box-sizing: border-box;
+}
+
+#Xpanel .Xpanel .block-area .added {
+    top: -14.75vh;
+}
+
+#Xpanel .Xpanel .block-area .added::after {
+    content:"";
+    position: relative;
+    display: inline-block;
+    top: 40%;
+    left: 106%;
+    height: 27%;
+    width: 30%;
+    margin: auto;
+    background-image: url(./image/basic/icons/plus.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+#Xpanel .run-button-area {
+    position: relative;
+    display: inline-block;
+    left: 5%;
+    top: 37%;
+    width: 5%;
+    height: 30%;
+    border-radius: 20px;
+    background-image: url(./image/basic/icons/run.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#Xpanel .run-button-area:hover {
+    transform: scale(1.1);
+    cursor: url(./media/curson.png), auto;
+}
+
+
+#Xpanel .Xpanel .block-area .block {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 12%;
+    margin: auto;
+    margin-left: 3vw;
+    border: 3px dashed #E3E3E3;
+    border-radius: 35px;
+    box-sizing: border-box;
+}
+
+.block-area .first {
+    background-color: #3968CB;
+    background-image: url(./image/basic/icons/shine.png);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.block-area .second {
+    background-color: #10E7E2;
+    background-image: url(./image/basic/icons/converse.png);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.block-area .third {
+    background-color: #F9EB0F;
+    background-image: url(./image/basic/icons/talk.png);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.block-area .fourth {
+    background-color: #FF68A8;
+    background-image: url(./image/basic/icons/see.png);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.block-area .fifth {
+    background-color: #FF2153;
+    background-image: url(./image/basic/icons/wave.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.block-area .sixth {
+    background-color: #CA7CD8;
+    background-image: url(./image/basic/icons/sing.png);
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#Xpanel .Xpanel .block-area .block img {
+    position: relative;
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding-top: 20%;
+}
+
+.block-area .first .color {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.block {
+    box-sizing: border-box;
+}
+
+
+.menu-area {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    display: block;
+    height: 0vh;
+    width: 70vw;
+    margin: 2.5vh 5vw;
+    opacity: 0;
+    z-index: -10;
+}
+
+.menu-area .menu  {
+    position: relative;
+    width: 8%;
+    height: 100%;
+    margin-left: 110.1%;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+}
+
+.menu-area .menu::-webkit-scrollbar{
+    display: none;
+}
+.menu-area .menu .menu-type  {
+    position: relative;
+    width: 85%;
+    margin: auto;
+    margin-top: 0.75rem;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+}
+
+.menu-area .menu .menu-type img {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: auto;
+    height: auto;
+}
+
+.menu-area .menu .brick-area {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.menu-area .menu .brick-area .brick {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 13.5%;
+    margin: 0.3rem 0;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    padding: 0.1rem;
+}
+
+.menu-area .menu .brick-area .brick:hover {
+    transform: scale(1.1);
+    cursor: url(./media/curson.png), auto;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: greenyellow;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
+
+.bg-magenta {
+    background-color: magenta;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.led-area {
+    position: relative;
+    width: 100%;
+    height: 0%;
+}
+
+.led-area svg {
+    position: relative;
+    width: 100vw;
+    margin-left: -35vw;
+}
+
+.led {
+    width: 1.75vw;
+    height: 30%;
+}
+
+.talk-area {
+    position: absolute;
+    top: 10%;
+    left: 30.5%;
+    width: 130%;
+    height: 16%;
+    opacity: 0;
+    z-index: -10;
+}
+
+.talk-area .talk-window {
+    position: relative;
+    width: 23%;
+    height: 40%;
+    margin: auto;
+    margin-left: 4.5vw;
+    background-color: white;
+    border-radius: 35px;
+    z-index: 8;
+}
+
+.talk-area .talk-window .messages-area {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    top: 3%;
+    border: 1px solid #E3E3E3;
+    border-radius: 35px;
+}
+
+.talk-area .talk-window .input-area {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    border-radius: 35px;
+}
+
+.talk-area .talk-window .input-area input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 35px;
+    padding-left: 1.5rem;
+    padding-right: 3rem;
+    font-size: 1rem;
+    box-shadow: 0 0 7px  rgba(0, 255, 255, 0.5);
+    border: 2px solid cyan;
+    text-align: center;
+}
+.talk-area .talk-window .input-area input:focus {
+    outline: none;
+    box-shadow: 0 0 7px  rgba(0, 255, 255, 0.5);
+    border: 2px solid cyan;
+    border-radius: 35px;
+}
+.talk-area .talk-window .input-area button {
+    top: 0;
+    left: 89.8%;
+    position: absolute;
+    width: auto;
+    height: 100%;
+    margin: auto;
+    border-radius: 35px;
+    border: 2px solid cyan;
+    background-color: cyan;
+    color: #fff;
+    font-weight: 700;
+}
+
+.talk-area .talk-window .input-area button:hover {
+    animation: sendPulse 1s infinite alternate;
+    -webkit-animation: sendPulse 1s infinite alternate; 
+    color:#3C3C3C;
+    cursor: url(./media/curson.png), auto;
+}
+
+.talk-area .talk-window .input-area button:focus {
+    outline: none;
+    box-shadow: 0 0 7px  rgba(0, 255, 255, 0.5);
+    border: 2px solid cyan;
+    border-radius: 35px;
+}
+
+@keyframes ledPulse {
+    from { stroke-width: 10px; stroke-opacity: 0.1;}
+    to { stroke-width: 25px; stroke-opacity: 0.3;}
+}
+
+@-webkit-keyframes ledPulse {
+    from { stroke-width: 10px; stroke-opacity: 0.1;}
+    to { stroke-width: 25px; stroke-opacity: 0.3;}
+}
+
+@keyframes sendPulse {
+    from { box-shadow: 0 0 2px  rgba(0, 255, 255, 0.9);}
+    to { box-shadow: 0 0 20px  rgba(0, 255, 255, 0.6);}
+}
+
+@-webkit-keyframes sendPulse {
+    from { box-shadow: 0 0 2px  rgba(0, 255, 255, 0.9);}
+    to { box-shadow: 0 0 20px  rgba(0, 255, 255, 0.6);}
+}
+
