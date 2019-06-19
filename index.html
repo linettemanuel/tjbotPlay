@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext" rel="stylesheet">
 </head>
 <body>
-<!--
     <div id="myOnlineCamera">
-        <video></video>
-        <canvas></canvas>
-        <button>Take Photo!</button>
+        <h1>Let's make a memory</h1>
+        <video class="video" autoplay="true" muted="muted"></video>
+        <canvas class="canvas" ></canvas>
+        <button class="takephoto">BLICK</button>
     </div>
--->
+
     <div class="Ypanel-area">
         <div class="Ypanel">
             <div class="Y-block-area block-area">
@@ -105,10 +105,15 @@
         <div class="talk-area">
             <div class="talk-window">
                 <div class="input-area">
-                    <input class="talk-msg" type="text" placeholder="Send me a message">
+                    <input class="talk-msg" type="text" placeholder="TJ Bot say:">
                     <button class="send" type="submit">Send</button>
                 </div>
             </div>
+        </div>
+
+        <div class="message-window">
+            <h1 class="text-for-tj"><span>TJ Bot says:</h1>
+            <h1 class="tj-text"></h1>
         </div>
 
         <section id="tjbot">
@@ -116,7 +121,7 @@
                 <div class="tjbot">
                     <div class="led-area">
                         <svg class="led-bg">
-                            <rect class="led" x="48.5%" y="15%" rx="10" ry="10" width="25px" height="20%"
+                            <rect class="led" x="49%" y="15%" rx="10" ry="10" width="50px" height="20%"
                             style="fill:rgb(170, 170, 170);" />
                             Sorry, your browser does not support inline SVG. No LED ligh for you.
                         </svg>
@@ -161,17 +166,29 @@
 
             </div>
         </section>
+
+        <div class="listening-text">
+            <span class="converse-dots first"> </span>
+            <span class="converse-dots second"> </span>
+            <span class="converse-dots third"> </span>
+        </div>
+
+        
         
     </div>
+    <script src="./tjbot.js" type="text/javascript"></script>
     <script src="./blinking.js" type="text/javascript"></script>
     <script src="./setup.js" type="text/javascript"></script>
     <script src="./grab.js" type="text/javascript"></script>
     <script src="./menu.js" type="text/javascript"></script>
     <script src="./wave.js" type="text/javascript"></script>
     <script src="./play.js" type="text/javascript"></script>
+    <script src="./photo.js" type="text/javascript"></script>
+    <script src="./converse.js" type="text/javascript"></script>
+    <script src="./run.js" type="text/javascript"></script>
+    <script src="./talk.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
 </body>
 </html>

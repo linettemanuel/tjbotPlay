@@ -1,4 +1,5 @@
 const panelOptions = ["shine", "converse", "talk", "see", "wave", "sing"];
+const ledColors = ["red", "greenyellow", "blue", "cyan", "magenta", "white"]
 const _setUp_ = {
     "options": {
         "mini-basic" : {

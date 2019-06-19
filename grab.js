@@ -3,7 +3,7 @@ let mainEl = document.querySelector(".main-content");
 let panelY = document.querySelector(".Y-block-area");
 let panelX = document.querySelector(".X-block-area");
 let blocksY = Array.from(panelY.children);
-const blocksX = Array.from(panelX.children);
+let blocksX;
 let cloner;
 let givenEvent;
 let block = document.querySelector("#block1");
@@ -12,6 +12,7 @@ let setEventShineTurn = 0;
 let musicPlayTurn = 0;
 const numbers = ["first", "second", "third", "fourth", "fifth", "sixth"]
 let runEvents = ["empty", "empty", "empty", "empty", "empty", "empty"];
+
 
 function setEvent(evntNum ,posNum){
     switch(evntNum) {
@@ -37,7 +38,7 @@ function setEvent(evntNum ,posNum){
           runEvents[posNum] = givenEvent;
           break;
         case 5:
-          givenEvent = `sing(${chosenSongs[musicPlayTurn]})`;
+          givenEvent = `sing()`;
           runEvents[posNum] = givenEvent;
           musicPlayTurn++;
           break; 
@@ -55,6 +56,7 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+/*
 function touchHandler(event) {
     var touch = event.changedTouches[0];
 
@@ -78,6 +80,7 @@ function init() {
     document.addEventListener("touchend", touchHandler, true);
     document.addEventListener("touchcancel", touchHandler, true);
 }
+*/
 
 function drop(ev, x) {
     ev.preventDefault();
@@ -85,24 +88,21 @@ function drop(ev, x) {
     let futureEl = document.querySelector(`#${data}`);
     blocksY = Array.from(panelY.children);
     let num = blocksY.indexOf(futureEl);
-    createNewOriginal(futureEl, num);
+    createNewOriginal(futureEl, num, ev);
     let current  = ev.target;
     if(futureEl.classList.contains("last") && num == 5) {
         futureEl.classList.remove("last");
         if(x < (blocksX.length - 1)){
             futureEl.classList.add("added");
-            panelX.replaceChild(futureEl, current);
-        } else {
-            panelX.replaceChild(futureEl, current);
-        }
+        } 
     } else if(futureEl.classList.contains("last") == false && x == (blocksX.length - 1)) {
         futureEl.classList.remove("added");
         futureEl.classList.add("last");
-        panelX.replaceChild(futureEl, current);
-    } else {
-        panelX.replaceChild(futureEl, current);
-    }
+    } 
+    panelX.replaceChild(futureEl, current);
+    blocksX = Array.from(panelX.children);
     setEvent(num ,x);
+
     /*
     if(futureEl.classList.contains("last") && num == 5){
         panelX.replaceChild(futureEl, current);
@@ -117,7 +117,28 @@ function drop(ev, x) {
     //ev.target.appendChild(document.getElementById(data));
 }
 
-function createNewOriginal(original, num) {
+function dropping(arr) {
+    arr.forEach( (block, index) => {
+        block.ondragover = (e) => {
+            allowDrop(e);
+        }
+        
+        block.ondrop = (e) => {
+            drop(e, index);
+        }
+
+        block.ondragenter = (e) => {
+            e.target.style.border = "3px dashed #48A5C1";
+        }
+
+
+        block.ondragleave = (e) => {
+            e.target.style.border = "3px dashed #E3E3E3";
+        }
+    })
+}
+
+function createNewOriginal(original, num, e) {
     if (panelY.children.length < 7){
         if(num == 0) {
             counter++;
@@ -125,24 +146,34 @@ function createNewOriginal(original, num) {
             console.log(shineIn)
             eventColors.push(shineIn);
         } else if(num == 5) {
-            chosenMusic = music;
+          /*  chosenMusic = music;
             chosenSongs.push(chosenMusic);
+            */
         }
         let clone = original.cloneNode(true); // "deep" clone
         i += 1;
         clone.id = "block" + i; // there can only be one element with an ID
         clone.ondragstart = (e) => {
+            blocksX = Array.from(panelX.children);
             drag(e);
+            dropping(blocksX);
         }; 
         clone.onclick = () => {
             if (num == 0) {
                 showOrHide(counter);
+            } else if (num == 1) {
+                tj.converse(tjbotFull);
             } else if (num == 2){
                 showOrHideTalk(counterTalk);
+            } else if (num == 3) {
+                if ((counterSee % 2 == false) && (cameraState == false)) {
+                    tj.see();
+                }
+                showOrHideSee(counterSee);
             } else if (num == 4) {
-                wave();
+                tj.wave();
             } else if (num == 5) {
-                play();
+                tj.play();
             }
         }
         clone.draggable = true;
@@ -157,27 +188,12 @@ function createNewOriginal(original, num) {
 
 blocksY.forEach( (block,index) => {
     block.ondragstart = (e) => {
+        blocksX = Array.from(panelX.children);
         drag(e);
+        dropping(blocksX);
     }
 })
 
-blocksX.forEach( (block, index) => {
-    block.ondrop = (e) => {
-        drop(e, index);
-    }
 
-    block.ondragover = (e) => {
-        allowDrop(e);
-    }
-
-    block.ondragenter = (e) => {
-        e.target.style.border = "3px dashed #48A5C1";
-    }
-
-
-    block.ondragleave = (e) => {
-        e.target.style.border = "3px dashed #E3E3E3";
-    }
-})
 
 

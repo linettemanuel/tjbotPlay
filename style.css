@@ -207,7 +207,7 @@ h1 span {
     position: relative;
     display: grid;
     top: 3vh;
-    height: 100%;
+    height: 73%;
     width: 100%;
     grid-template-columns: 80% 20%;
 }
@@ -215,7 +215,7 @@ h1 span {
 #tjbot .tjbot-area .tjbot .complete-tj .tjbot-pic {
     position: relative;
     width: auto;
-    height: 70%;
+    height: 100%;
     margin-left: 25%;
     z-index: 1;
 }
@@ -223,9 +223,9 @@ h1 span {
 #tjbot .tjbot-area .tjbot .complete-tj .tjbot-hand {
     position: relative;
     width: auto;
-    height: 25%;
+    height: 35%;
     margin-top: 145%;
-    margin-left: -2.5vw;
+    margin-left: -1.4vw;
 }
 
 #Xpanel {
@@ -496,6 +496,7 @@ h1 span {
 
 .led {
     width: 1.75vw;
+    min-width: 50px;
     height: 30%;
 }
 
@@ -587,6 +588,132 @@ h1 span {
     border-radius: 35px;
 }
 
+#myOnlineCamera {
+    position: absolute;
+    top: 20vh;
+    left: 3vw;
+    width: 35vw;
+    height: 32vh;
+    z-index: -10;
+    opacity: 0;
+}
+
+#myOnlineCamera h1 {
+    text-align: center;
+}
+
+
+#myOnlineCamera video {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+    border-radius: 25px;
+}
+#myOnlineCamera canvas {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    height: 100%;;
+    margin: 0;
+    background-color:#3C3C3C;
+    border-radius: 25px;
+}
+
+#myOnlineCamera button {
+    position: relative;
+    display: block;
+    clear: both;
+    height: 3rem;
+    width: 20%;
+    margin: auto;
+    border-radius: 15px;
+    border: none;
+    background-color: #10E7E2;
+}
+
+#myOnlineCamera button:focus {
+    outline: none;
+}
+
+#myOnlineCamera button:hover {
+    animation: sendPulse 1s infinite alternate;
+    -webkit-animation: sendPulse 1s infinite alternate;
+    cursor: url(./media/curson.png), auto;
+}
+
+.listening-text {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 15vh;
+    opacity: -10;
+    opacity: 0;
+}
+
+.converse-dots {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    left: 47%;
+    border-radius: 50%;
+    border: 1.5px solid gray; 
+    margin-left: 10px;
+}
+
+.listening-text .first {
+    animation: jumpUp 1s infinite alternate, tjPulse 1s infinite alternate;
+    -webkit-animation: jumpUp 1s infinite alternate, tjPulse 1s infinite alternate;
+}
+
+.listening-text .second {
+    animation: jumpUp 1s 0.5s infinite alternate, tjPulse 1s infinite alternate;
+    -webkit-animation: jumpUp 1s infinite alternate, tjPulse 1s infinite alternate;
+}
+
+.listening-text .third {
+    animation: jumpUp 1s 1s infinite alternate, tjPulse 1s infinite alternate;
+    -webkit-animation: jumpUp 1s infinite alternate, tjPulse 1s infinite alternate;
+}
+
+.message-window {
+    position: absolute;
+    display: block;
+    background-color: white;
+    width: 20vw;
+    height: 30vh;
+    max-height: 300px;
+    min-width: 150px;
+    opacity: 0;
+    z-index: -10;
+    left: 17vw;
+    top: 16vh;
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.message-window .text-for-tj {
+    position: relative;
+    display: block;
+    width: 70%;
+    margin: auto;
+    padding: 2rem 0.5rem;
+}
+
+.tj-text {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    display: block;
+    height: 60%;
+    overflow-y: scroll;
+    margin-top: -1.2rem;
+}
+
 @keyframes ledPulse {
     from { stroke-width: 10px; stroke-opacity: 0.1;}
     to { stroke-width: 25px; stroke-opacity: 0.3;}
@@ -606,4 +733,25 @@ h1 span {
     from { box-shadow: 0 0 2px  rgba(0, 255, 255, 0.9);}
     to { box-shadow: 0 0 20px  rgba(0, 255, 255, 0.6);}
 }
+
+@keyframes tjPulse {
+    from { box-shadow: 0 0 2px  rgba(0, 0, 0, 0.9);}
+    to { box-shadow: 0 0 30px  rgba(0, 0, 0, 0.7);}
+}
+
+@-webkit-keyframes tjPulse {
+    from { box-shadow: 0 0 2px  rgba(0, 0, 0, 0.9);}
+    to { box-shadow: 0 0 30px  rgba(0, 0, 0, 0.7);}
+}
+
+@keyframes jumpUp {
+    from { transform: translateY(0) ;}
+    to { transform: translateY(-15px) ;}
+}
+
+@-webkit-keyframes jumpUp {
+    from { transform: translateY(0) ;}
+    to { transform: translateY(-15px) ;}
+}
+
 
